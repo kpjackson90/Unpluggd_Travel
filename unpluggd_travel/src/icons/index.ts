@@ -10,6 +10,9 @@ import { LeftIcon } from './modules/LeftIcon';
 import { HeartIcon } from './modules/HeartIcon';
 import { ShareIcon } from './modules/ShareIcon';
 import { CloudIcon } from './modules/CloudIcon';
+import { LocationIcon } from './modules/LocationIcon';
+import { BuildingIcon } from './modules/BuildingIcon';
+import { StarIcon } from './modules/StarIcon';
 
 export {
   AppleIcon,
@@ -24,4 +27,7 @@ export {
   HeartIcon,
   ShareIcon,
   CloudIcon,
+  LocationIcon,
+  BuildingIcon,
+  StarIcon,
 };

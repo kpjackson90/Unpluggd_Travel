@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  SafeAreaView,
-  ScrollView,
-  Image,
-} from 'react-native';
-import { Header, Separator } from '../../../components';
-import { CloudIcon } from '../../../icons';
+import { View, Text, SafeAreaView, ScrollView, Image } from 'react-native';
+import { Header, LongImageCard, Separator } from '../../../components';
+import { CloudIcon, LocationIcon } from '../../../icons';
 
 export const SingleDestinationScreen = () => {
   return (
@@ -43,7 +36,8 @@ export const SingleDestinationScreen = () => {
             margin: 10,
           }}
         >
-          <View>
+          <View style={{ flexDirection: 'row' }}>
+            <LocationIcon />
             <Text>San Miguel, Italy</Text>
           </View>
           <View style={{ flexDirection: 'row' }}>
@@ -52,7 +46,7 @@ export const SingleDestinationScreen = () => {
           </View>
         </View>
         <View style={{ margin: 10 }}>
-          <Text>
+          <Text style={{ fontSize: 16, lineHeight: 27.2, fontWeight: '400' }}>
             Lorem ipsum dolor sit amet, consec adipiscin elit, ipsum dolor sit
             amet, consec adipiscing.Lorem ipsum dolor sit amet, consec
             adipiscin.
@@ -79,6 +73,21 @@ export const SingleDestinationScreen = () => {
             </Text>
           </View>
         </View>
+        <LongImageCard />
+        <Separator height={80} />
+        <View style={{ backgroundColor: '#FFF8F0' }}>
+          <Text
+            style={{
+              paddingTop: 30,
+              fontWeight: '800',
+              fontSize: 24,
+              lineHeight: 26.11,
+            }}
+          >
+            Discover and Mint
+          </Text>
+        </View>
+        <Separator height={100} />
       </ScrollView>
     </SafeAreaView>
   );
