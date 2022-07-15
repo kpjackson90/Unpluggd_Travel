@@ -1,16 +1,28 @@
-import { RouteProp, useNavigation, useRoute } from "@react-navigation/core";
-import { StackNavigationProp } from "@react-navigation/stack";
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export enum Screens {
-  Landing = "Landing",
-  Login = "Login",
-  Home = "Home"
+  Landing = 'Landing',
+  Login = 'Login',
+  Home = 'Home',
+  Marketplace = 'Marketplace',
+  Mint = 'Mint',
+  Search = 'Search',
+  Profile = 'Profile',
+  Notification = 'Notification',
+  SingleDestination = 'SingleDestination',
 }
 
 export type AppParamList = {
   [Screens.Landing]: undefined;
   [Screens.Login]: undefined;
   [Screens.Home]: undefined;
+  [Screens.Marketplace]: undefined;
+  [Screens.Mint]: undefined;
+  [Screens.Search]: undefined;
+  [Screens.Profile]: undefined;
+  [Screens.Notification]: undefined;
+  [Screens.SingleDestination]: undefined;
 };
 
 export const useAppNavigation = () =>
