@@ -1,12 +1,21 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, Image } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {
   Header,
   LongImageCard,
   Separator,
   DiscoverTemplate,
+  SmallImageCard,
+  MediumImageCard,
 } from '../../../components';
-import { CloudIcon, LocationIcon } from '../../../icons';
+import { CloudIcon, LocationIcon, StarIcon } from '../../../icons';
 
 export const SingleDestinationScreen = () => {
   return (
@@ -81,14 +90,13 @@ export const SingleDestinationScreen = () => {
         <LongImageCard />
         <Separator height={80} />
         <DiscoverTemplate />
+
         <Separator height={30} />
-        <View>
-          <Text>Enjoy best cuisines</Text>
-          <View>
-            <Text>Recommended places to eat</Text>
-            <Text>See all</Text>
-          </View>
-        </View>
+
+        <SmallImageCard />
+
+        <MediumImageCard />
+
         <Separator height={100} />
       </ScrollView>
     </SafeAreaView>
