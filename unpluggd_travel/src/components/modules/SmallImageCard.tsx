@@ -8,11 +8,25 @@ export const SmallImageCard = () => {
   const navigation = useAppNavigation();
   return (
     <View>
-      <Text style={{ fontWeight: '800', fontSize: 24, lineHeight: 26.11, color: '#212529', marginBottom: 8}}>Enjoy best cuisines</Text>
+      <Text
+        style={{
+          fontWeight: '800',
+          fontSize: 24,
+          lineHeight: 26.11,
+          color: '#212529',
+          marginBottom: 8,
+        }}
+      >
+        Enjoy best cuisines
+      </Text>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <Text style={{ fontWeight: '400', fontSize: 16, lineHeight: 27.2}}>Recommended places to eat</Text>
-        <TouchableOpacity onPress={() => navigation.navigate(Screens.DestinationRestaurant)}>
-        <Text>See all</Text>
+        <Text style={{ fontWeight: '400', fontSize: 16, lineHeight: 27.2 }}>
+          Recommended places to eat
+        </Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(Screens.DestinationRestaurant)}
+        >
+          <Text>See all</Text>
         </TouchableOpacity>
       </View>
 
