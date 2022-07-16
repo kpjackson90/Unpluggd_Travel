@@ -13,6 +13,7 @@ import { CloudIcon } from './modules/CloudIcon';
 import { LocationIcon } from './modules/LocationIcon';
 import { BuildingIcon } from './modules/BuildingIcon';
 import { StarIcon } from './modules/StarIcon';
+import { EthereumIcon } from './modules/EthereumIcon';
 
 export {
   AppleIcon,
@@ -30,4 +31,5 @@ export {
   LocationIcon,
   BuildingIcon,
   StarIcon,
+  EthereumIcon,
 };
