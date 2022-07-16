@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import {
   Header,
@@ -15,17 +14,20 @@ import {
   SmallImageCard,
   MediumImageCard,
 } from '../../../components';
-import { CloudIcon, LocationIcon, StarIcon } from '../../../icons';
+import { CloudIcon, LocationIcon } from '../../../icons';
+import { Screens, useAppNavigation } from '../../screen';
 
 export const SingleDestinationScreen = () => {
+  const navigation = useAppNavigation();
   return (
     <SafeAreaView>
       <Header />
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ margin: 20}}>
         <Image
           source={require('../../../../assets/asia.jpg')}
           style={{
-            width: 366,
+            width: '100%',
             height: 234,
             borderRadius: 24,
             alignSelf: 'center',
@@ -37,29 +39,33 @@ export const SingleDestinationScreen = () => {
             fontSize: 24,
             lineHeight: 26.11,
             color: '#212529',
-            marginLeft: 10,
             marginTop: 20,
           }}
         >
           San Miguel
         </Text>
+
+        <Separator height={10} />
+
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            margin: 10,
           }}
         >
           <View style={{ flexDirection: 'row' }}>
             <LocationIcon />
-            <Text>San Miguel, Italy</Text>
+            <Text style={{ marginLeft: 5, justifyContent: 'center'}}>San Miguel, Italy</Text>
           </View>
           <View style={{ flexDirection: 'row' }}>
             <CloudIcon />
             <Text>30 C</Text>
           </View>
         </View>
-        <View style={{ margin: 10 }}>
+
+        <Separator height={10} />
+
+        <View>
           <Text style={{ fontSize: 16, lineHeight: 27.2, fontWeight: '400' }}>
             Lorem ipsum dolor sit amet, consec adipiscin elit, ipsum dolor sit
             amet, consec adipiscing.Lorem ipsum dolor sit amet, consec
@@ -69,25 +75,11 @@ export const SingleDestinationScreen = () => {
             Scroll Bar Here
           </Text>
         </View>
-        <View style={{ margin: 10 }}>
-          <Text>Recommended Hotels</Text>
-          <View
-            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
-          >
-            <Text>Top picks of places you can stay</Text>
-            <Text
-              style={{
-                fontWeight: '500',
-                fontSize: 14,
-                lineHeight: 18.2,
-                color: '#3081ED',
-              }}
-            >
-              See all
-            </Text>
-          </View>
         </View>
+
+
         <LongImageCard />
+
         <Separator height={80} />
         <DiscoverTemplate />
 

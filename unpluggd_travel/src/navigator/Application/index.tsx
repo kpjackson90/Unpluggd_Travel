@@ -8,6 +8,8 @@ import { SearchScreen } from './screens/SearchScreen';
 import { ProfileScreen } from './screens/ProfileScreen';
 import { NotificationScreen } from './screens/NotificationScreen';
 import { SingleDestinationScreen } from './screens/SingleDestinationScreen';
+import { DestinationRestaurantScreen } from './screens/DestinationRestaurantScreen';
+import {DestinationActivityScreen } from './screens/DestinationActivityScreen'
 import {
   createBottomTabNavigator,
   BottomTabBar,
@@ -184,7 +186,8 @@ export const ApplicationStack = () => {
         component={SingleDestinationScreen}
         options={{ headerShown: false }}
       />
-      <Tab.Screen name={Screens.Mint} component={MintScreen} />
+      <Screen  name={Screens.DestinationRestaurant} component={DestinationRestaurantScreen} options={{ headerShown: false}}/>
+      <Screen  name={Screens.DestinationActivity} component={DestinationActivityScreen} options={{ headerShown: false}}/>
     </Navigator>
   );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { LeftIcon, HeartIcon, ShareIcon } from '../../icons';
+import { useAppNavigation } from '../../navigator/screen';
 
 export const Header = () => {
+  const navigation = useAppNavigation();
   return (
     <View
       style={{
@@ -11,7 +13,7 @@ export const Header = () => {
         margin: 20,
       }}
     >
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <LeftIcon />
       </TouchableOpacity>
       <Text

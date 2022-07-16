@@ -2,14 +2,18 @@ import React from 'react';
 import { View, Image, TouchableOpacity, Text } from 'react-native';
 import { StarIcon } from '../../icons';
 import { Separator } from './Separator';
+import { Screens, useAppNavigation } from '../../navigator/screen';
 
 export const MediumImageCard = () => {
+  const navigation = useAppNavigation();
   return (
     <View style={{ margin: 20 }}>
-      <Text>Top Activities</Text>
+      <Text style={{ fontWeight: '800', fontSize: 24, lineHeight: 26.11}}>Top Activities</Text>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <Text>Activities for every type of traveler</Text>
+        <TouchableOpacity onPress={() => navigation.navigate(Screens.DestinationActivity)}>
         <Text>See all</Text>
+        </TouchableOpacity>
       </View>
 
       <Separator height={20} />

@@ -11,6 +11,8 @@ export enum Screens {
   Profile = 'Profile',
   Notification = 'Notification',
   SingleDestination = 'SingleDestination',
+  DestinationRestaurant = 'DestinationRestaurant',
+  DestinationActivity = 'DestinationActivity'
 }
 
 export type AppParamList = {
@@ -23,6 +25,8 @@ export type AppParamList = {
   [Screens.Profile]: undefined;
   [Screens.Notification]: undefined;
   [Screens.SingleDestination]: undefined;
+  [Screens.DestinationRestaurant]: undefined;
+  [Screens.DestinationActivity]: undefined;
 };
 
 export const useAppNavigation = () =>
