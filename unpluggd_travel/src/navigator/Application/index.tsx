@@ -10,6 +10,7 @@ import { NotificationScreen } from './screens/NotificationScreen';
 import { SingleDestinationScreen } from './screens/SingleDestinationScreen';
 import { DestinationRestaurantScreen } from './screens/DestinationRestaurantScreen';
 import { DestinationActivityScreen } from './screens/DestinationActivityScreen';
+import { SingleEventScreen } from './screens/SingleEventScreen';
 import {
   createBottomTabNavigator,
   BottomTabBar,
@@ -194,6 +195,11 @@ export const ApplicationStack = () => {
       <Screen
         name={Screens.DestinationActivity}
         component={DestinationActivityScreen}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={Screens.SingleEvent}
+        component={SingleEventScreen}
         options={{ headerShown: false }}
       />
     </Navigator>

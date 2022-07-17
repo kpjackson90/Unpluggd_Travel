@@ -5,7 +5,8 @@ import { DiscoverTemplate } from './modules/DiscoverTemplate';
 import { SmallImageCard } from './modules/SmallImageCard';
 import { MediumImageCard } from './modules/MediumImageCard';
 import { CategoryItem } from './modules/CategoryItem';
-import { DiscoverTemplate2 } from './modules/DiscoverTemplate2'
+import { DiscoverTemplate2 } from './modules/DiscoverTemplate2';
+import { DiscoverTemplate3 } from './modules/DiscoverTemplate3';
 
 export {
   Separator,
@@ -15,5 +16,6 @@ export {
   SmallImageCard,
   MediumImageCard,
   CategoryItem,
-  DiscoverTemplate2
+  DiscoverTemplate2,
+  DiscoverTemplate3,
 };

@@ -7,6 +7,7 @@ import {
   LongImageCard,
   MediumImageCard,
   SmallImageCard,
+  DiscoverTemplate3,
 } from '../../../components';
 
 export const DestinationActivityScreen = () => {
@@ -39,7 +40,12 @@ export const DestinationActivityScreen = () => {
         <LongImageCard />
         <Separator height={45} />
         <MediumImageCard />
-        <View></View>
+        <DiscoverTemplate3 />
+        <Separator height={45} />
+        <MediumImageCard />
+        <Separator height={45} />
+        <DiscoverTemplate3 />
+        <Separator height={100} />
       </ScrollView>
     </SafeAreaView>
   );

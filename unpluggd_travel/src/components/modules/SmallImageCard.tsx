@@ -48,6 +48,7 @@ export const SmallImageCard = () => {
           <StarIcon color={'#444444'} />
           <Text>4.7 (59,000 review)</Text>
           <TouchableOpacity
+            onPress={() => navigation.navigate(Screens.SingleEvent)}
             style={{
               height: 29,
               width: 66,
