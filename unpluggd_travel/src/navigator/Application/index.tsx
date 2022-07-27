@@ -11,10 +11,10 @@ import { SingleDestinationScreen } from './screens/SingleDestinationScreen';
 import { DestinationRestaurantScreen } from './screens/DestinationRestaurantScreen';
 import { DestinationActivityScreen } from './screens/DestinationActivityScreen';
 import { SingleEventScreen } from './screens/SingleEventScreen';
-import {
-  createBottomTabNavigator,
-  BottomTabBar,
-} from '@react-navigation/bottom-tabs';
+import { ReviewScreen } from './screens/ReviewScreen';
+import { ReviewSearchScreen } from './screens/ReviewSearchScreen';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Screens } from '../screen';
 import {
   HomeIcon,
@@ -200,6 +200,16 @@ export const ApplicationStack = () => {
       <Screen
         name={Screens.SingleEvent}
         component={SingleEventScreen}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={Screens.Review}
+        component={ReviewScreen}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={Screens.ReviewSearch}
+        component={ReviewSearchScreen}
         options={{ headerShown: false }}
       />
     </Navigator>

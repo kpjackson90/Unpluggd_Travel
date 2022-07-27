@@ -1,9 +1,33 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { LeftIcon, HeartIcon, ShareIcon } from '../../icons';
+import {
+  LeftIcon,
+  HeartIcon,
+  ShareIcon,
+  SearchIcon,
+  PlusIcon,
+} from '../../icons';
 import { useAppNavigation } from '../../navigator/screen';
 
-export const Header = () => {
+interface HeaderProps {
+  title?: string;
+  share?: boolean;
+  search?: boolean;
+  add?: boolean;
+  like?: boolean;
+  onPressLeft?: () => void;
+  onPressRight?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({
+  title,
+  share,
+  search,
+  add,
+  like,
+  onPressLeft,
+  onPressRight,
+}) => {
   const navigation = useAppNavigation();
   return (
     <View
@@ -26,14 +50,23 @@ export const Header = () => {
           marginLeft: 40,
         }}
       >
-        Top Destination
+        {title || 'Top Destination'}
       </Text>
       <View style={{ flexDirection: 'row' }}>
-        <TouchableOpacity>
-          <ShareIcon />
+        <TouchableOpacity onPress={onPressLeft}>
+          {share ? (
+            <ShareIcon />
+          ) : search ? (
+            <SearchIcon color={'#444444'} />
+          ) : (
+            <View />
+          )}
         </TouchableOpacity>
-        <TouchableOpacity style={{ marginLeft: 20, marginTop: 2 }}>
-          <HeartIcon />
+        <TouchableOpacity
+          style={{ marginLeft: 20, marginTop: 2 }}
+          onPress={onPressRight}
+        >
+          {like ? <HeartIcon /> : add ? <PlusIcon /> : <View />}
         </TouchableOpacity>
       </View>
     </View>

@@ -7,6 +7,10 @@ import { MediumImageCard } from './modules/MediumImageCard';
 import { CategoryItem } from './modules/CategoryItem';
 import { DiscoverTemplate2 } from './modules/DiscoverTemplate2';
 import { DiscoverTemplate3 } from './modules/DiscoverTemplate3';
+import { ReviewStat } from './modules/ReviewStat';
+import { ReviewItem } from './modules/ReviewItem';
+import { ReviewModal } from './modules/ReviewModal';
+import { ReviewSearchModal } from './modules/ReviewSearchModal';
 
 export {
   Separator,
@@ -18,4 +22,8 @@ export {
   CategoryItem,
   DiscoverTemplate2,
   DiscoverTemplate3,
+  ReviewStat,
+  ReviewItem,
+  ReviewModal,
+  ReviewSearchModal,
 };

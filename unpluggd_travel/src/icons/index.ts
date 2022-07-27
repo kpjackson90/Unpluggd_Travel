@@ -14,6 +14,10 @@ import { LocationIcon } from './modules/LocationIcon';
 import { BuildingIcon } from './modules/BuildingIcon';
 import { StarIcon } from './modules/StarIcon';
 import { EthereumIcon } from './modules/EthereumIcon';
+import { DotIcon } from './modules/DotIcon';
+import { PlusIcon } from './modules/PlusIcon';
+import { CloseIcon } from './modules/CloseIcon';
+import { FilterIcon } from './modules/FilterIcon';
 
 export {
   AppleIcon,
@@ -32,4 +36,8 @@ export {
   BuildingIcon,
   StarIcon,
   EthereumIcon,
+  DotIcon,
+  PlusIcon,
+  CloseIcon,
+  FilterIcon,
 };
