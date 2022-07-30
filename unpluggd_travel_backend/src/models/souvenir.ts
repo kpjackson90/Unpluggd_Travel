@@ -1,12 +1,14 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import { IUser } from './user';
+import { ICategory } from './category';
 
 interface SouvenirAttrs {
   title: string;
   price: string;
   description: string;
   image: string;
+  categories: [ICategory];
   creator: IUser;
   owner: IUser;
 }
@@ -20,6 +22,7 @@ interface ISouvenir extends mongoose.Document {
   price: string;
   description: string;
   image: string;
+  categories: [ICategory];
   creator: IUser;
   owner: IUser;
 }
@@ -38,10 +41,17 @@ const SouvenirSchema = new Schema<ISouvenir>(
     image: {
       type: String,
     },
+    categories: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Categories',
+      },
+    ],
     creator: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
     },
-    owner: { type: String },
+    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   },
   {
     timestamps: true,

@@ -5,6 +5,7 @@ import {
   GraphQLList,
 } from 'graphql';
 import { ReviewType } from './review_type';
+import { CategoryType } from './category_type';
 
 export const AccommodationType = new GraphQLObjectType({
   name: 'AccommodationType',
@@ -17,6 +18,7 @@ export const AccommodationType = new GraphQLObjectType({
     photos: { type: new GraphQLList(GraphQLString) },
     reviews: { type: new GraphQLList(ReviewType) },
     amenities: { type: new GraphQLList(GraphQLString) },
+    categories: { type: new GraphQLList(CategoryType) },
     rating: { type: GraphQLString },
     description: { type: GraphQLString },
     price: { type: GraphQLString },

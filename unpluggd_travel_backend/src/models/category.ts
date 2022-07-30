@@ -3,19 +3,24 @@ const { Schema } = mongoose;
 
 interface CategoryAttrs {
   title: string;
+  icon: string;
 }
 
 interface CategoryModel extends mongoose.Model<ICategory> {
   build(attrs: CategoryAttrs): ICategory;
 }
 
-interface ICategory extends mongoose.Document {
+export interface ICategory extends mongoose.Document {
   title: string;
+  icon: string;
 }
 
 const CategorySchema = new Schema<ICategory>(
   {
     title: {
+      type: String,
+    },
+    icon: {
       type: String,
     },
   },

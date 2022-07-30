@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 
 interface UserAttrs {
   email: string;
+  password?: string;
   role: string;
 }
 
@@ -12,6 +13,7 @@ interface UserModel extends mongoose.Model<IUser> {
 
 export interface IUser extends mongoose.Document {
   email: string;
+  password?: string;
   role: string;
 }
 
@@ -24,6 +26,9 @@ const UserSchema = new Schema<IUser>(
       lowercase: true,
       unique: true,
       match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+    },
+    password: {
+      type: String,
     },
     role: {
       type: String,

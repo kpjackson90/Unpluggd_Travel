@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
-import { IReview } from './review';
+import { IReview, Review } from './review';
+import { ICategory } from './category';
 
 interface ActivityAttrs {
   name: string;
@@ -10,6 +11,7 @@ interface ActivityAttrs {
   phoneNumber: string;
   price: string;
   description: string;
+  categories: [ICategory];
   activities: [string];
   meetingPoint: string;
   longitude: string;
@@ -19,6 +21,16 @@ interface ActivityAttrs {
 
 interface ActivityModel extends mongoose.Model<IActivity> {
   build(attrs: ActivityAttrs): IActivity;
+  addReview(
+    id: string,
+    rating: string,
+    visitType: string,
+    fromDate: string,
+    toDate: string,
+    title: string,
+    body: string,
+    images: [string]
+  ): IActivity;
 }
 
 interface IActivity extends mongoose.Document {
@@ -29,6 +41,7 @@ interface IActivity extends mongoose.Document {
   phoneNumber: string;
   price: string;
   description: string;
+  categories: [ICategory];
   activities: [string];
   meetingPoint: string;
   longitude: string;
@@ -45,6 +58,7 @@ const ActivitySchema = new Schema<IActivity>(
     phoneNumber: { type: String },
     price: { type: String },
     description: { type: String },
+    categories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Category' }],
     activities: [{ type: String }],
     meetingPoint: { type: String },
     longitude: { type: String },
@@ -56,6 +70,45 @@ const ActivitySchema = new Schema<IActivity>(
 
 ActivitySchema.statics.build = (attrs: ActivityAttrs) => {
   return new Activity(attrs);
+};
+
+ActivitySchema.statics.addReview = function (
+  id,
+  rating,
+  visitType,
+  fromDate,
+  toDate,
+  title,
+  body,
+  images
+) {
+  return this.findById(id).then((activity: IActivity) => {
+    if (activity.id) {
+      const review = new Review({
+        rating,
+        visitType,
+        fromDate,
+        toDate,
+        title,
+        body,
+        images,
+      });
+
+      if (typeof activity.reviews !== 'undefined') {
+        activity.reviews.push(review);
+      }
+
+      return Promise.all([review.save(), activity.save()]).then(
+        ([review, activity]) => activity
+      );
+    }
+  });
+};
+
+ActivitySchema.statics.findReview = function (id) {
+  return this.findById(id)
+    .populate('review')
+    .then((activity: IActivity) => activity.reviews);
 };
 
 const Activity = mongoose.model<IActivity, ActivityModel>(

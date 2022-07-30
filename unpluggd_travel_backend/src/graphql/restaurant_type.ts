@@ -6,6 +6,7 @@ import {
   GraphQLBoolean,
 } from 'graphql';
 import { ReviewType } from './review_type';
+import { CategoryType } from './category_type';
 
 export const RestaurantType = new GraphQLObjectType({
   name: 'RestaurantType',
@@ -19,6 +20,7 @@ export const RestaurantType = new GraphQLObjectType({
     hours: { type: GraphQLString },
     phoneNumber: { type: GraphQLString },
     description: { type: GraphQLString },
+    categories: { type: new GraphQLList(CategoryType) },
     cuisines: { type: new GraphQLList(GraphQLString) },
     serving: { type: new GraphQLList(GraphQLString) },
     latitude: { type: GraphQLString },
