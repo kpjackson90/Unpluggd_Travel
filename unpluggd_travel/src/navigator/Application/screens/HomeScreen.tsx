@@ -9,8 +9,9 @@ import {
   ScrollView,
 } from 'react-native';
 import { Separator } from '../../../components';
-import { UserIcon } from '../../../icons';
+import { UserIcon, LocationMarkerIcon } from '../../../icons';
 import { useAppNavigation, Screens } from '../../screen';
+import styled from '@emotion/native';
 
 export const HomeScreen = () => {
   const navigation = useAppNavigation();
@@ -65,9 +66,21 @@ export const HomeScreen = () => {
           <View
             style={{ flexDirection: 'row', justifyContent: 'space-between' }}
           >
-            <View style={{ justifyContent: 'center' }}>
+            <View
+              style={{
+                justifyContent: 'center',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              <LocationMarkerIcon />
               <Text
-                style={{ fontWeight: '400', fontSize: 12, lineHeight: 23.8 }}
+                style={{
+                  fontWeight: '400',
+                  fontSize: 14,
+                  lineHeight: 23.8,
+                  color: '#1E1E1E',
+                }}
               >
                 Landungsari, Malang
               </Text>
@@ -75,8 +88,8 @@ export const HomeScreen = () => {
             <View
               style={{
                 backgroundColor: '#EAEEFD',
-                height: 80,
-                width: 80,
+                height: 60,
+                width: 60,
                 borderRadius: 100,
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -93,7 +106,7 @@ export const HomeScreen = () => {
                   <TouchableOpacity
                     key={index}
                     style={{
-                      backgroundColor: '#D3D3D3',
+                      backgroundColor: '#F3F3F3',
                       height: 48,
                       width: 100,
                       borderRadius: 30,
@@ -110,11 +123,7 @@ export const HomeScreen = () => {
           <Separator height={40} />
           <View>
             <View>
-              <Text
-                style={{ fontWeight: '800', fontSize: 20, lineHeight: 21.76 }}
-              >
-                Top Destination
-              </Text>
+              <HeaderText>Top Destination</HeaderText>
               <Separator height={10} />
               <Text
                 style={{
@@ -166,11 +175,7 @@ export const HomeScreen = () => {
             </View>
             <Separator height={30} />
             <View>
-              <Text
-                style={{ fontWeight: '800', fontSize: 20, lineHeight: 21.76 }}
-              >
-                Popular Places
-              </Text>
+              <HeaderText>Popular Places</HeaderText>
               <Text
                 style={{
                   fontWeight: '400',
@@ -340,3 +345,11 @@ export const HomeScreen = () => {
     </SafeAreaView>
   );
 };
+
+const HeaderText = styled.Text(() => ({
+  fontWeight: '800',
+  fontSize: 20,
+  lineHeight: 21.76,
+  fontFamily: 'Archivo',
+  fontStyle: 'normal',
+}));

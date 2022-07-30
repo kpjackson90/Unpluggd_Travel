@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api:
+    container_name: unpluggd-travel-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8000:5000'
+    volumes:
+      - /app/node_modules
+      - .:/app
+    environment:
+      NODE_ENV: development
+      JWT_SECRET: '8qOHNRg9657422af14cc56de927d5e3d7a73160s1iEBTFi'
+      MONGO_URI: 'mongodb://mongo/travel-db'
+      S3_ACCESS_KEY: ''
+      SECRET_ACCESS_KEY: ''
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'

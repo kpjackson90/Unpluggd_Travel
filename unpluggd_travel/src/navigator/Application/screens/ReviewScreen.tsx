@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, SafeAreaView, Modal } from 'react-native';
+import { View, Text, ScrollView, SafeAreaView } from 'react-native';
 import {
   Header,
   Separator,

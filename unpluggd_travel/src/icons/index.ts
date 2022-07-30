@@ -18,6 +18,7 @@ import { DotIcon } from './modules/DotIcon';
 import { PlusIcon } from './modules/PlusIcon';
 import { CloseIcon } from './modules/CloseIcon';
 import { FilterIcon } from './modules/FilterIcon';
+import { LocationMarkerIcon } from './modules/LocationMarkerIcon';
 
 export {
   AppleIcon,
@@ -40,4 +41,5 @@ export {
   PlusIcon,
   CloseIcon,
   FilterIcon,
+  LocationMarkerIcon,
 };
